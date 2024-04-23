@@ -1,0 +1,144 @@
+1.Prime or not :
+
+
+public class IsPrime {
+
+	public static void main(String[] args) {
+		int num = 29;
+	    boolean flag = false;
+	    for (int i = 2; i <= num / 2; ++i) {
+	      // condition for nonprime number
+	      if (num % i == 0) {
+	        flag = true;
+	        break;
+	      }
+	    }
+
+	    if (!flag)
+	      System.out.println(num + " is a prime number.");
+	    else
+	      System.out.println(num + " is not a prime number.");
+	  }
+	}
+
+2. Number is positive or negative:
+
+
+public class PositiveNegative {
+
+	public static void main(String[] args) {
+		int num=-30;
+		if (num>0)
+		{
+			System.out.println("The number is positive");
+		}
+		else {
+			System.out.println("The number is negative");
+
+}
+	}
+}
+
+
+3.Data types Home assignment:
+
+package week1.day2;
+
+public class Browser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		float browserVersion = 1.8f;
+		String browserName = "Chrome";
+		boolean pageLoaded= true;
+		int noOfBrowser = 2;
+		char browserLogo ='C';
+		
+		System.out.println("The browser version is :" +browserVersion +"\n"+
+		"The name of browser is "  +browserName +"\n" +
+				"Page loaded or not : " + pageLoaded +"\n" +
+		"Number of browsers " +noOfBrowser +"\n" +
+				"The logo of browser " +browserLogo +"\n");
+	}
+
+}
+
+
+4:Fibonacci Series :
+
+package week1.day2;
+
+public class Fibonacci {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n1=0,n2=1,n3,i,count=9;    
+		 System.out.print(n1+" "+n2);//printing 0 and 1    
+		    
+		 for(i=2;i<count;++i)//loop starts from 2 because 0 and 1 are already printed    
+		 {    
+		  n3=n1+n2;    
+		  System.out.print(" "+n3);    
+		  n1=n2;    
+		  n2=n3;    
+		 }    
+		  
+		}}  
+	
+
+5. Odd Numbers from 1 to 10 :
+
+package week1.day2;
+
+public class FindOddNumbers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int number=10;  
+		System.out.print("List of odd numbers from 1 to "+number+": ");  
+		for (int i=1; i<=number; i++)   
+		{    
+		if (i%2!=0)   
+		{  
+		System.out.print(i + " ");  
+		}  
+	}
+
+
+	}
+}
+
+
+6.Palindrome using for loop 
+
+package week1.day2;
+
+public class PalindromeExample {
+
+	public static void main(String[] args) {
+		int lastDigit,sum=0,a;    
+		int inputNumber=185;
+ 
+		a=inputNumber; 
+        
+      
+	for( ;a != 0; a /= 10 )
+		{   
+			lastDigit=a%10; //getting remainder  
+			sum=(sum*10)+lastDigit;  
+			a=a/10;
+			
+		}    
+ 
+		// if given number equal to sum than number is palindrome otherwise not palindrome
+		if(sum==inputNumber)    
+			System.out.println("Number is palindrome ");    
+		else    
+			System.out.println("Number is not palindrome");    
+ 
+	}
+ 
+}
+
+
