@@ -1,0 +1,197 @@
+1.CREATE ACCOUNT IN LEAF TAP.
+
+package week1.day4;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CreateAccount {
+
+	public static void main(String[] args) throws InterruptedException {
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("http://leaftaps.com/opentaps/control/main");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("username")).sendKeys("demosalesmanager");
+		driver.findElement(By.id("password")).sendKeys("crmsfa");
+		driver.findElement(By.className("decorativeSubmit")).click();
+		driver.findElement(By.linkText("CRM/SFA")).click();
+		driver.findElement(By.linkText("Accounts")).click();
+		driver.findElement(By.linkText("Create Account")).click();
+		driver.findElement(By.id("accountName")).sendKeys("Nivetha");
+		driver.findElement(By.name("description")).sendKeys("Selenium Automation Tester");
+		driver.findElement(By.id("officeSiteName")).sendKeys("LeafTaps");
+		driver.findElement(By.id("numberEmployees")).sendKeys("23");
+		driver.findElement(By.className("smallSubmit")).click();
+		String title = driver.getTitle();
+		if(title.contains("Account Details")) {
+			System.out.println("The title of of the page is correct:" +title);
+		}
+		Thread.sleep(6000);
+		driver.close();
+		
+	}
+
+}
+
+
+2.CHECK BOX LEAF GROUND
+
+
+package week1.day4;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CheckBox {
+
+	public static void main(String[] args) throws InterruptedException {
+		ChromeDriver driver= new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://leafground.com/checkbox.xhtml");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		//basic checkbox
+		driver.findElement(By.id("j_idt87:j_idt89")).click();
+		
+		//notification checkbox
+		driver.findElement(By.id("j_idt87:j_idt91")).click();
+		//tristate checkbox
+		driver.findElement(By.id("j_idt87:ajaxTriState")).click();
+		
+		//toggle switch
+		
+		WebElement findElement = driver.findElement(By.id("j_idt87:j_idt100"));
+		System.out.println("The text is:"+findElement.getText());
+		findElement.click();
+		
+		boolean selected = driver.findElement(By.id("j_idt87:j_idt100")).isSelected();
+		//System.out.println(selected);
+		if(selected==false) {
+			System.out.println("The toggle button is ON");
+		}
+		else {
+			System.out.println("The toggle button is OFF");
+		}	
+		
+		//verify if checkbox is diabled
+		boolean enabled = driver.findElement(By.id("j_idt87:j_idt100")).isEnabled();
+		if(enabled==false) {
+			System.out.println("The check box to verify is enabled");
+		}
+		else {
+			System.out.println("The check box to verify is disabled");
+		}
+		
+		//to click on th
+
+	}
+
+}
+
+3.Create Lead:
+
+
+package week1.day4;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CreateLead {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("http://leaftaps.com/opentaps/control/main");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("username")).sendKeys("demosalesmanager");
+		driver.findElement(By.id("password")).sendKeys("crmsfa");
+		driver.findElement(By.className("decorativeSubmit")).click();
+		driver.findElement(By.linkText("CRM/SFA")).click();
+		driver.findElement(By.linkText("Leads")).click();
+		driver.findElement(By.linkText("Create Lead")).click();
+		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Geeth");
+		driver.findElement(By.id("createLeadForm_lastName")).sendKeys("G");
+		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TestLeaf");
+		driver.findElement(By.id("createLeadForm_generalProfTitle")).sendKeys("Automation Tester");
+		driver.findElement(By.name("submitButton")).click();
+		Thread.sleep(7000);
+		String title = driver.getTitle();
+		if(title.contains("View Lead")) {
+			System.out.println("The title of the page is same as in the DOM");
+		}
+		
+		else {
+			System.out.println("The title of the page is not the same as in the DOM");
+		}
+		
+		Thread.sleep(7000);
+		driver.close();
+	}
+
+}
+
+4.LEAF GROUND BUTTON INTERACTION:
+
+package week1.day4.homeaaignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.Rectangle;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LeafGroundButtonInteraction {
+
+	public static void main(String[] args) throws InterruptedException {
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://leafground.com/button.xhtml");
+		driver.manage().window().maximize();
+		
+		//to find if button is enabled
+		Boolean isEnabled = driver.findElement(By.id("j_idt88:j_idt92")).isEnabled();
+		if(isEnabled==false) {
+			System.out.println("The button is disabled");
+				}
+		else {
+		System.out.println("The button is not disabled");
+		}
+		
+		//to find the position of a button
+		 WebElement findElement = driver.findElement(By.id("j_idt88:j_idt94"));
+		 Point location = findElement.getLocation();
+		 System.out.println("x,Y-cordinates:"+location);
+		 
+		 //to find the background colour of button
+		 String colour = driver.findElement(By.id("j_idt88:j_idt96")).getCssValue("background-color");
+		 System.out.println("The background colour of the button:"+colour);
+		 
+		 //String colour1 = driver.findElement(By.id("j_idt88:j_idt96")).getCssValue("color");
+		 //System.out.println("The background colour of the button:"+colour1);
+		 
+		 //to find the height and width of button
+		 WebElement submitButton = driver.findElement(By.id("j_idt88:j_idt98"));
+		 Dimension size = submitButton.getSize();
+		 System.out.println("Width of box:"+size.width);
+		 System.out.println("Height of box:"+size.height);
+		 
+		 //to verify the title of the page
+		driver.findElement(By.id("j_idt88:j_idt90")).click();
+		String title = driver.getTitle();
+		System.out.println("The title of the page is"+title);
+		
+		if(title.equals(title)) {
+			System.out.println("The title of  the page is correct");
+		}
+		else {
+			System.out.println("The title of the page is not correct");
+		}
+		
+		Thread.sleep(5000);
+		driver.close();
+	}
+
+}
+
