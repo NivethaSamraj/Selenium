@@ -1,0 +1,124 @@
+package week1.day3;
+
+public class FindIntersectionArrays {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int a[]={3,2,11,4,6,7}; 
+		 int b[]={1,2,8,4,9,7};
+		 for (int i = 0; i < a.length; i++) {
+				
+	        	for (int j = 0; j < b.length; j++) {
+	        		if(a[i]==b[j])
+	        		{
+	        			System.out.println("Matching element found: "+b[j]);
+	        		}
+					
+	}}
+	}
+}
+
+
+2. package week1.day3;
+import java.util.Arrays;
+public class FindMissingElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+	        int numbers[]={9,6,4,5,7,0,1};
+	        Arrays.sort(numbers);
+	        int i=1;
+
+	        while ( i < numbers.length ) 
+	        {
+	            if ( numbers[i] - numbers[i-1] == 1 ) 
+	            {
+	            } 
+	            else 
+	            {
+	                System.out.println( "Missing number is " + ( numbers[i-1] + 1 ) );
+	            }
+	            i++;
+	        }
+	    
+
+	}
+
+}
+
+3.package week1.day3;
+
+public class OddIndexToUppercase {
+
+	public static void main(String[] args) {
+		String st="changeme";
+		char[] ch=st.toCharArray();
+		
+		for (int i = 0; i < ch.length; i++) {
+			if(i%2==0)
+			{
+				System.out.print(ch[i]);
+			}
+			else
+			{
+				char temp = Character.toUpperCase(ch[i]);
+				System.out.print(temp);
+			}
+		}
+
+	}
+
+}
+
+4.Reverse odd words:
+
+
+package week1.day3;
+
+public class ReverseOddWords {
+
+	public static void main(String[] args) {
+		String text = "My Name is Arnold Johnson Aaamber";
+		String reverse[] = text.split(" ");
+
+		for (int i = 0; i < reverse.length; i++) {
+			if (i % 2 == 0) {
+				System.out.print(reverse[i] + " ");
+			} else {
+				String newWord = "";
+				char[] word = reverse[i].toCharArray();
+				for (int j = word.length - 1; j >= 0; j--) {
+					newWord = newWord + word[j];
+				}
+				System.out.print(newWord + " ");
+			}
+		}
+
+	}
+
+}
+5.
+package week1.day3;
+
+public class RemoveDuplicateWords {
+	public static void main(String[] args) {
+		String words = "We learn java basics as part of java sessions in java week1";
+		String[] arrtext=words.split(" ");
+		for (int i=0; i<arrtext.length; i++) {
+			for (int j=i+1; j<arrtext.length; j++) {
+				if(arrtext[i].equals (arrtext[j])) {
+					arrtext[j]="";
+				}
+				}
+			}
+		String out="";
+		for(int k=0;k<arrtext.length;k++) {
+			out=out+arrtext[k]+" ";
+		}
+		System.out.println(out);
+		}
+	
+	}
+
