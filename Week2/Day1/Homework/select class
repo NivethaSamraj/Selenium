@@ -22,8 +22,8 @@ public class SelectClass {
 		driver.findElement(By.linkText("Leads")).click();
 		driver.findElement(By.linkText("Create Lead")).click();
 		driver.findElement(By.xpath("//input[@id='createLeadForm_companyName']")).sendKeys("TestLeaf");
-		driver.findElement(By.xpath("//input[@id='createLeadForm_firstName']")).sendKeys("Geeth");
-		driver.findElement(By.xpath("//input[@id='createLeadForm_lastName']")).sendKeys("G");
+		driver.findElement(By.xpath("//input[@id='createLeadForm_firstName']")).sendKeys("Nivi");
+		driver.findElement(By.xpath("//input[@id='createLeadForm_lastName']")).sendKeys("N");
 		//dropdown with index
 		WebElement dd1 = driver.findElement(By.xpath("//select[@id='createLeadForm_dataSourceId']"));
 		Select sourceDp = new Select(dd1);
