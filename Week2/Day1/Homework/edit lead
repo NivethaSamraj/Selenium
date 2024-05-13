@@ -27,9 +27,9 @@ public class EditLead {
 		
 		//Create Lead page
 		driver.findElement(By.xpath("//input[@id='createLeadForm_companyName']")).sendKeys("TestLeaf");
-		driver.findElement(By.xpath("//input[@id='createLeadForm_firstName']")).sendKeys("Geeth");
-		driver.findElement(By.xpath("//input[@id='createLeadForm_lastName']")).sendKeys("G");
-		driver.findElement(By.xpath("//input[@id='createLeadForm_firstNameLocal']")).sendKeys("Gokul");
+		driver.findElement(By.xpath("//input[@id='createLeadForm_firstName']")).sendKeys("Nivi");
+		driver.findElement(By.xpath("//input[@id='createLeadForm_lastName']")).sendKeys("N");
+		driver.findElement(By.xpath("//input[@id='createLeadForm_firstNameLocal']")).sendKeys("Poeyah");
 		driver.findElement(By.id("createLeadForm_departmentName")).sendKeys("Testing");
 		WebElement description = driver.findElement(By.id("createLeadForm_description"));
 		description.sendKeys("Automation Testing");
