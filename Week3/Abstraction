@@ -1,0 +1,207 @@
+
+package week3.day1.abstraction;
+
+public class Amazon extends CanaraBank {
+
+	public void upiPayments() {
+		System.out.println("upi payments available");
+		
+	}
+
+	public void cardPayments() {
+		System.out.println("card payments can be done");
+		
+	}
+
+	@Override
+	public void recordPaymentDetails() {
+		System.out.println("record paymenyt details");
+		
+	}
+	
+	
+	public void cashOnDelivery() {
+		System.out.println("cash on delivery available");
+		
+	}
+
+	public void internetBanking() {
+		System.out.println("Internet banking available");
+		
+	}
+	
+	public static void main(String[] args) {
+		Amazon a = new Amazon();
+		a.cardPayments();
+		a.cashOnDelivery();
+		a.recordPaymentDetails();
+		a.upiPayments();
+		a.internetBanking();
+	}
+}
+
+
+
+
+package week3.day1.abstraction;
+
+public abstract class CanaraBank implements Payments {
+
+		public abstract void recordPaymentDetails();
+		// we can also partially implement in canara bank and partially in amazon
+		
+		/* public void cashOnDelivery() {
+		System.out.println("cash on delivery available");
+		
+	}
+
+	public void internetBanking() {
+		System.out.println("Internet banking available");
+		
+	}*/
+
+}
+
+
+
+
+package week3.day1.abstraction;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LearnFindElements {
+
+	public static void main(String[] args) {
+		ChromeDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.get("https://www.amazon.in/");
+		//using tag name to find value
+		List<WebElement> list = driver.findElements(By.tagName("a"));
+		int size = list.size();
+		System.out.println("total number of elemts in dom with tag a :" +size);
+		
+		//to print all the tags
+		for (WebElement web : list) {
+			String text1 = web.getText();
+			System.out.println("print all the text : "+text1);
+			
+		}
+
+	}
+
+}
+
+package week3.day1.abstraction;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+public class LearnList {
+	public static void main(String[] args) {
+		
+		List<String> mentors= new ArrayList<String>();
+		mentors.add("aaa");
+		mentors.add("ddd");
+		mentors.add("ggg");
+		mentors.add("hhh");
+		
+		System.out.println("List of mentors :" +mentors);
+		
+		// to remove any one
+		mentors.remove(1);
+		System.out.println("The list of mentors : "+mentors);
+		
+		//to add a new name
+		mentors.add("rrr");
+		System.out.println("The list of mentors are : "+mentors);
+		
+		//to add in 1st position add with index
+		mentors.add(1, "rrr");
+		System.out.println("The mentors list add with index : "+mentors);
+		
+		//to print with index value
+		String string = mentors.get(2);
+		System.out.println("The mentor with index : "+string);
+		
+		//contains
+		boolean contains = mentors.contains("rrr");
+		System.out.println(contains);
+		
+		//to sort in order
+		Collections.sort(mentors);
+		System.out.println("sorted list:" +mentors);
+		
+		//for loop
+		for (int i=0;i<mentors.size();i++) {
+			String string2 = mentors.get(i);
+		System.out.println(string2);
+			
+		}
+		//collection concept uses advance for loop
+		//will not work due to conflict in data types
+	/*	for(String i:mentors) {
+			mentors.get(i)
+		}*/
+		
+		mentors.clear();
+		System.out.println("Cleared list : "+mentors);
+	}
+
+}
+
+payments.java
+
+package week3.day1.abstraction;
+
+public interface Payments {
+	
+	public void cashOnDelivery();
+	
+	public void upiPayments();
+	
+	public void cardPayments();
+	
+	public void internetBanking();
+}
+
+REMOVE DUPLICATES
+
+
+package week3.day1.abstraction;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+public class RemoveDuplicates {
+
+	public static void main(String[] args) {
+		int[] num= {23,45,67,45,12,89,23};
+		
+		List<Integer> val=new ArrayList<Integer>();
+		//for each to convert to arrayist
+		for (Integer i : num) {
+			val.add(i);
+		}
+		System.out.println(val);
+		Collections.sort(val);
+		System.out.println("sorted list:" +val);
+		
+		//iterating
+		for(int i=0;i<val.size()-1;i++) {
+			if(val.get(i)==val.get(i+1)) {
+				System.out.println(val.get(i));
+			}
+		}
+	}
+
+}
