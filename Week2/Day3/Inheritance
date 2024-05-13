@@ -1,0 +1,79 @@
+Button Sub.java
+package week2.day3.homeassignments.inheritance;
+
+public class ButtonSub extends InheritanceWebElemntP {
+	
+	public void submit() {
+		System.out.println("To print submit method");
+	}
+
+}
+
+Checkbox button sub
+
+package week2.day3.homeassignments.inheritance;
+
+public class CheckBoxButtonSub extends ButtonSub{
+
+		public void clickCheckButton() {
+			System.out.println("Click check button'");
+		}
+		
+
+}
+
+element exce
+
+
+package week2.day3.homeassignments.inheritance;
+
+public class ElementsExce extends ButtonSub{
+
+	public static void main(String[] args) {
+		ElementsExce ele=new ElementsExce();
+		ele.click();
+		System.out.println(ele.setText("STring text"));
+		ele.submit();
+
+
+	}
+
+}
+Web Element
+
+package week2.day3.homeassignments.inheritance;
+
+public class InheritanceWebElemntP {
+	
+	public void click() {
+		
+	System.out.println("To print click");
+	}
+
+	public String setText(String text) {
+	return text;
+	}
+}
+
+Radio button 
+
+package week2.day3.homeassignments.inheritance;
+
+public class RadioButtonSub extends ButtonSub{
+
+	public void selectRadioButton() {
+		System.out.println("select radio button");
+	}
+
+}
+Text field sub 
+
+package week2.day3.homeassignments.inheritance;
+
+public class TextFieldSub extends InheritanceWebElemntP {
+
+	public void getText() {
+		System.out.println("To print get text method");
+	}
+	
+}
